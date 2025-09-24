@@ -2,10 +2,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color:#111317;
+    /* background-color:#111317; */
 }
 body{
     font-family: "Poppins", sans-serif;
+    background-color: #111317;
 }
 nav{
     max-width: var(--max-width);
@@ -16,12 +17,43 @@ nav{
     justify-content: space-between;
     gap: 2rem;
 }
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1002;
+  }
+  
+  .hamburger span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  
+  /* Hamburger to X animation */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+.nav_links a:hover,
+.nav_links a:active{
+    color: #f9ac54;
+}
 .nav_logo {
     max-width: 150px;
     border: 2px solid white;
     border-radius: 4px;
     padding: 2px;
-    margin: auto;
+    margin-left: 4rem;
 }
 .nav_links {
     list-style: none;
@@ -56,6 +88,9 @@ a{
   
 .btn:hover {
     background-color: rgb(224, 152, 18);
+}
+.menu-btn{
+    display: none;
 }
 .header_container{
     position: relative;
@@ -266,9 +301,123 @@ img {
     color: #d1d5db;
     background-color: #1f2125;
 }
+
+.stats div{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 40px; 
+  padding: 40px 20px; 
+  text-align: center; 
+  flex-wrap: wrap;
+}
+
+.stats .counter {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f9ac54;
+  margin-bottom: 0.5rem;
+  transition: 0.3s;
+}
+.stats p {
+  font-size: 1.3rem; 
+  color: #d1d5db; 
+  margin: 0;
+  width: 150px;
+  font-size: 24px;
+}
+.trainers{
+    padding:60px 0;
+    color:white
+}
+    .trainer-grid{
+        display:flex;
+        flex-wrap:wrap;
+        gap:20px;
+        justify-content:center
+    }
+    .trainer{
+        width:220px;
+        height:300px;
+        perspective:1000px;
+    }
+    .trainer-inner{
+        position:relative;
+        width:100%;
+        height:100%;
+        transition:transform 2s;
+        transform-style:preserve-3d;
+    }
+    .trainer:hover .trainer-inner{
+        transform:rotateY(180deg);
+    }
+    .trainer-face{
+        position:absolute;
+        inset:0;
+        border-radius:12px;
+        backface-visibility:hidden;
+        overflow:hidden;
+        display:flex;
+        flex-direction:column;
+    }
+    .trainer-front{
+        background: #1f2125;
+        color:#d79447;
+        padding:14px;
+    }
+    .trainer-front img{
+        height:150px;
+        object-fit:cover;
+        border-radius:8px;
+        margin-bottom: 20px;
+    }
+    .trainer-back{
+        background:#f9ac54;
+        color:white;
+        padding:14px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        transform:rotateY(180deg);
+    }
+
+
+.schedule{
+    padding: 5rem  0 0 0;
+    color:white;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+.table-wrap{
+    overflow-x:auto;
+    border-radius:10px;
+    
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#1f2125;
+    
+}
+th,td{
+    padding:20px;
+    border:1px solid rgba(246, 246, 246, 0.03);
+    text-align:center
+}
+.badge{
+    padding:6px 8px;
+    border-radius:999px;
+    font-weight:700;
+    display:inline-block
+}
+.badge:hover{
+    color: #d79447;
+}
+
 .price__container{
     margin: auto;
-    padding: 4rem 1rem;
+    padding: 4rem 4rem 1rem 4rem;
 }
 .plan{
     margin-bottom: 1rem;
@@ -285,7 +434,7 @@ img {
     color: #d1d5db;
 }
 .price__grid {
-    margin: 4rem;
+    margin-top: 4rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
@@ -351,6 +500,143 @@ img {
 .price__btn:hover{
     background-color: #f9ac54;
 }
+.signup{
+    color:white;
+    padding: 40px 0;
+}
+
+.form-card{
+    background-color: #1f2125;
+    padding:30px ;
+    border-radius:12px;
+    max-width:400px;
+    margin:0 auto;
+    
+}
+form .row{
+    display:grid;
+    gap:25px;
+    flex-wrap:wrap
+}
+form label{
+    display:block;
+    font-size:13px;
+    margin-bottom:6px;
+    color:#d79447;
+    background-color: #1f2125;
+}
+.signupForm{
+    padding: 40px 0;
+}
+input,select{
+    padding:10px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.06);
+    background:transparent;
+    color:white;
+    background-color: #1f2125;
+    width:100%
+}
+.form-actions{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin-top:12px
+}
+  
+.testimonials {
+  padding: 4rem 2rem;
+  /* background: #fff; */
+  text-align: center;
+  position: relative;
+}
+
+.testimonial-carousel {
+  max-width: 700px;
+  margin: 2rem auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card {
+  display: none;
+  background: #f9ac54;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-style: italic;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.testimonial-card.active {
+  display: block;
+}
+.testimonials h2{
+    color: white;
+    font-size: 2rem;
+}
+.testimonial-card p{
+    color: white;
+}
+.testimonial-card h3 {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* ========================
+   TESTIMONIAL DOTS
+======================== */
+.testimonial-dots {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #f9ac54;
+  transform: scale(1.2);
+}
+.faq { padding: 4rem 2rem; background: #1f2125;}
+.faq-item { margin: 1rem 0; }
+.faq-question {
+  width: 100%;
+  background: #f9ac54;
+  color: #fff;
+  padding: 1rem;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 8px;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #fff;
+  padding: 0 1rem;
+  border-radius: 0 0 8px 8px;
+}
+.faq-answer p { padding: 1rem 0; }
+.faq-item.active .faq-answer { max-height: 200px; }
+
+.error{
+    color:red;
+    font-size:13px
+}
+
 .footer__container {
     position: relative;
     display: grid;
@@ -405,7 +691,33 @@ img {
     *{
         overflow-x: hidden;
     }
+    .hamburger {
+        display: flex;
+      }
+    
     .nav_links{
+        flex-direction: column;
+        background: linear-gradient(130deg, #1f2125, #f9ac54);
+        backdrop-filter: blur(6px);
+        position: fixed;
+        top: 0;
+        right: -250px; /* hidden off screen */
+        width: 250px;
+        height: 100%;
+        padding-top: 80px;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+        box-shadow: -4px 0 15px rgba(0, 0, 0, 0.6);
+           
+    }
+    .nav_links.active {
+        right: 0;
+    }
+    .nav_links a{
+        display: block;
+        font-size: 1.5rem;
+    }
+    nav .btn{
         display: none;
     }
     .header_container{
@@ -427,6 +739,9 @@ img {
         grid-template-columns: repeat(1, 1fr);
         gap: 1rem;
         margin: 4rem 0;
+    }
+    .stats div{
+        display: flex;
     }
     .class__container {
         grid-template-columns: repeat(1, 1fr);
@@ -467,6 +782,17 @@ img {
     margin: 0;
     bottom: -5rem;
   }
+  .trainer-back{
+    
+    background:#f9ac54;
+    color:white;
+    padding:14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    transform:rotateY(180deg);
+}
+  
   .price__grid {
     grid-template-columns: repeat(1, 1fr);
     margin: 4rem 0;
